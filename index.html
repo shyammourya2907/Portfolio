@@ -648,10 +648,228 @@
             }
         }
 
-        .ai-tools-grid .skill img {
-            width: 44px;
-            height: 44px;
-            object-fit: contain;
+        .award-thumb-wrap {
+            width: 100%;
+            height: 140px;
+            border-radius: 12px;
+            overflow: hidden;
+            background: rgba(255,255,255,.03);
+            border: 1px solid var(--line);
+            margin-bottom: 12px;
+        }
+
+        .cert-award-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform .3s ease;
+        }
+
+        .award-card-item:hover .cert-award-img {
+            transform: scale(1.05);
+        }
+        #skills .section-head.ai-tools-head,
+        .ai-tools-head {
+            align-items: flex-start;
+        }
+
+        .ai-tools-grid {
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            max-width: 940px;
+        }
+
+        .ai-tool-card {
+            min-height: 126px;
+        }
+
+        .ai-inline-logo {
+            width: 46px;
+            height: 46px;
+            display: block;
+        }
+
+        .openai-logo {
+            color: #f7f9fc;
+        }
+
+        .claude-logo {
+            color: #d97757;
+        }
+
+        .antigravity-mark {
+            width: 48px;
+            height: 48px;
+            position: relative;
+            transform: rotate(45deg);
+        }
+
+        .ag-dot {
+            width: 19px;
+            height: 19px;
+            position: absolute;
+            border-radius: 7px;
+        }
+
+        .ag-blue {
+            background: #4285F4;
+            left: 0;
+            top: 0;
+        }
+
+        .ag-red {
+            background: #EA4335;
+            right: 0;
+            top: 0;
+        }
+
+        .ag-yellow {
+            background: #FBBC05;
+            left: 0;
+            bottom: 0;
+        }
+
+        .ag-green {
+            background: #34A853;
+            right: 0;
+            bottom: 0;
+        }
+
+        /* Keep the AI section heading compact and prevent awkward two-line wrapping */
+        #skills .section-head[style*="margin-top"] {
+            display: block;
+            margin-top: 3.4rem !important;
+            margin-bottom: 28px;
+        }
+
+        #skills .section-head[style*="margin-top"] h3 {
+            margin-top: 4px;
+            max-width: none;
+        }
+
+        #skills .section-head[style*="margin-top"] p {
+            margin-top: 10px;
+            max-width: 720px;
+        }
+
+        @media (max-width: 800px) {
+            .ai-tools-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                max-width: none;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .ai-tools-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+
+        /* --- AI tools section v2 --- */
+        .ai-tools-grid {
+            display: grid !important;
+            grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+            gap: 16px !important;
+            width: 100% !important;
+            max-width: none !important;
+        }
+
+        .ai-tool-card {
+            min-height: 118px !important;
+            padding: 18px 14px !important;
+            gap: 10px !important;
+        }
+
+        .ai-logo-wrap {
+            width: 52px;
+            height: 52px;
+            display: grid;
+            place-items: center;
+            border-radius: 14px;
+            background: rgba(255, 255, 255, .035);
+            border: 1px solid rgba(148, 163, 184, .12);
+        }
+
+        .ai-logo-wrap img {
+            width: 36px !important;
+            height: 36px !important;
+            object-fit: contain !important;
+            display: block !important;
+        }
+
+        .ai-tool-card span {
+            font-size: .95rem !important;
+            font-weight: 500;
+        }
+
+        #skills .section-head[style*="margin-top"] {
+            display: grid !important;
+            grid-template-columns: 1fr auto !important;
+            gap: 32px !important;
+            align-items: end !important;
+            margin-top: 3.2rem !important;
+            margin-bottom: 28px !important;
+        }
+
+        #skills .section-head[style*="margin-top"] h3 {
+            margin: 2px 0 0 !important;
+            white-space: nowrap;
+        }
+
+        #skills .section-head[style*="margin-top"] p {
+            max-width: 610px !important;
+            margin: 0 !important;
+        }
+
+        @media (max-width: 900px) {
+            .ai-tools-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+            }
+
+            #skills .section-head[style*="margin-top"] {
+                grid-template-columns: 1fr !important;
+                gap: 10px !important;
+                align-items: start !important;
+            }
+
+            #skills .section-head[style*="margin-top"] h3 {
+                white-space: normal;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .ai-tools-grid {
+                grid-template-columns: 1fr !important;
+            }
+        }
+
+
+        /* Final AI tools layout: ChatGPT, Claude, Google Antigravity */
+        .ai-tools-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        }
+
+        .chatgpt-logo-wrap {
+            color: #f7f9fc;
+        }
+
+        .chatgpt-logo-svg {
+            width: 38px;
+            height: 38px;
+            display: block;
+        }
+
+        @media (max-width: 800px) {
+            .ai-tools-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+            }
+        }
+
+        @media (max-width: 650px) {
+            .ai-tools-grid {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -899,33 +1117,30 @@
                 </div>
 
                 <div class="skills-grid ai-tools-grid">
-                    <div class="skill">
-                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.259 23.9a6.0557 6.0557 0 0 0 5.7617-3.9889 5.9895 5.9895 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7365-7.1899zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0813 4.779-2.7582a.795.795 0 0 0 .3927-.6813v-6.7369l2.0202 1.1686a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4954 4.4953zm-9.6607-4.1254a4.4707 4.4707 0 0 1-.5355-3.0137l.142.0854 4.7838 2.7582a.795.795 0 0 0 .7901 0l5.8341-3.3685v2.3324a.0805.0805 0 0 1-.0332.0617l-4.836 2.7918a4.4998 4.4998 0 0 1-6.1453-1.6473zm-1.123-10.3168a4.485 4.485 0 0 1 2.3656-1.9729v5.682a.7903.7903 0 0 0 .3975.6813l5.834 3.3685-2.0202 1.1638a.0805.0805 0 0 1-.0711.0048L3.9897 16.096a4.5045 4.5045 0 0 1-1.5135-6.1091zm16.1017 3.3685l-5.8341-3.3685 2.0202-1.1639a.0805.0805 0 0 1 .0711-.0048l4.8456 2.7966a4.5045 4.5045 0 0 1-3.1028 8.0818v-5.6583a.7903.7903 0 0 0-.3975-.6813zm2.4923-3.693l-.142-.0854-4.7838-2.7582a.795.795 0 0 0-.7901 0L10.5181 8.2415V5.9091a.0805.0805 0 0 1 .0332-.0617l4.836-2.7918a4.5045 4.5045 0 0 1 6.6808 4.6611zm-12.7241 3.5222l-2.0202-1.1686a.071.071 0 0 1-.038-.052V3.8698a4.5045 4.5045 0 0 1 7.3718-3.4545l-.1419.0813-4.779 2.7582a.795.795 0 0 0-.3927.6813v6.7369zm1.2652-3.1179l2.8717-1.6583 2.8717 1.6583v3.3166l-2.8717 1.6583-2.8717-1.6583v-3.3166z"
-                                fill="#74AA9C" />
-                        </svg>
+                    <div class="skill ai-tool-card">
+                        <div class="ai-logo-wrap chatgpt-logo-wrap" aria-label="ChatGPT">
+                            <svg class="chatgpt-logo-svg" viewBox="0 0 24 24" role="img" aria-label="ChatGPT logo">
+                                <path fill="currentColor"
+                                    d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.259 23.9a6.0557 6.0557 0 0 0 5.7617-3.9889 5.9895 5.9895 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7365-7.1899zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0813 4.779-2.7582a.795.795 0 0 0 .3927-.6813v-6.7369l2.0202 1.1686a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4954 4.4953zm-9.6607-4.1254a4.4707 4.4707 0 0 1-.5355-3.0137l.142.0854 4.7838 2.7582a.795.795 0 0 0 .7901 0l5.8341-3.3685v2.3324a.0805.0805 0 0 1-.0332.0617l-4.836 2.7918a4.4998 4.4998 0 0 1-6.1453-1.6473zm-1.123-10.3168a4.485 4.485 0 0 1 2.3656-1.9729v5.682a.7903.7903 0 0 0 .3975.6813l5.834 3.3685-2.0202 1.1638a.0805.0805 0 0 1-.0711.0048L3.9897 16.096a4.5045 4.5045 0 0 1-1.5135-6.1091zm16.1017 3.3685l-5.8341-3.3685 2.0202-1.1639a.0805.0805 0 0 1 .0711-.0048l4.8456 2.7966a4.5045 4.5045 0 0 1-3.1028 8.0818v-5.6583a.7903.7903 0 0 0-.3975-.6813zm2.4923-3.693l-.142-.0854-4.7838-2.7582a.795.795 0 0 0-.7901 0L10.5181 8.2415V5.9091a.0805.0805 0 0 1 .0332-.0617l4.836-2.7918a4.5045 4.5045 0 0 1 6.6808 4.6611zm-12.7241 3.5222l-2.0202-1.1686a.071.071 0 0 1-.038-.052V3.8698a4.5045 4.5045 0 0 1 7.3718-3.4545l-.1419.0813-4.779 2.7582a.795.795 0 0 0-.3927.6813v6.7369zm1.2652-3.1179l2.8717-1.6583 2.8717 1.6583v3.3166l-2.8717 1.6583-2.8717-1.6583v-3.3166z" />
+                            </svg>
+                        </div>
                         <span>ChatGPT</span>
                     </div>
-                    <div class="skill">
-                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.259 23.9a6.0557 6.0557 0 0 0 5.7617-3.9889 5.9895 5.9895 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7365-7.1899zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0813 4.779-2.7582a.795.795 0 0 0 .3927-.6813v-6.7369l2.0202 1.1686a.071.071 0 0 1 .038.052v5.5826a4.5045 4.5045 0 0 1-4.4954 4.4953zm-9.6607-4.1254a4.4707 4.4707 0 0 1-.5355-3.0137l.142.0854 4.7838 2.7582a.795.795 0 0 0 .7901 0l5.8341-3.3685v2.3324a.0805.0805 0 0 1-.0332.0617l-4.836 2.7918a4.4998 4.4998 0 0 1-6.1453-1.6473zm-1.123-10.3168a4.485 4.485 0 0 1 2.3656-1.9729v5.682a.7903.7903 0 0 0 .3975.6813l5.834 3.3685-2.0202 1.1638a.0805.0805 0 0 1-.0711.0048L3.9897 16.096a4.5045 4.5045 0 0 1-1.5135-6.1091zm16.1017 3.3685l-5.8341-3.3685 2.0202-1.1639a.0805.0805 0 0 1 .0711-.0048l4.8456 2.7966a4.5045 4.5045 0 0 1-3.1028 8.0818v-5.6583a.7903.7903 0 0 0-.3975-.6813zm2.4923-3.693l-.142-.0854-4.7838-2.7582a.795.795 0 0 0-.7901 0L10.5181 8.2415V5.9091a.0805.0805 0 0 1 .0332-.0617l4.836-2.7918a4.5045 4.5045 0 0 1 6.6808 4.6611zm-12.7241 3.5222l-2.0202-1.1686a.071.071 0 0 1-.038-.052V3.8698a4.5045 4.5045 0 0 1 7.3718-3.4545l-.1419.0813-4.779 2.7582a.795.795 0 0 0-.3927.6813v6.7369zm1.2652-3.1179l2.8717-1.6583 2.8717 1.6583v3.3166l-2.8717 1.6583-2.8717-1.6583v-3.3166z"
-                                fill="#38bdf8" />
-                        </svg>
-                        <span>Codex</span>
-                    </div>
-                    <div class="skill">
-                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M4.711 3.125h3.298l9.493 17.75h-3.299L4.711 3.125zm11.278 0h3.299l-4.14 7.742h-3.299l4.14-7.742zm-6.55 10.008h3.299l-4.14 7.742H5.299l4.14-7.742z" fill="#D97757"/>
-                        </svg>
+
+                    <div class="skill ai-tool-card">
+                        <div class="ai-logo-wrap">
+                            <img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo">
+                        </div>
                         <span>Claude</span>
                     </div>
-                    <div class="skill">
-                        <svg width="42" height="42" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" stroke="#4285F4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                        <span>Antigravity</span>
+
+                    <div class="skill ai-tool-card">
+                        <div class="ai-logo-wrap">
+                            <img src="https://cdn.jsdelivr.net/gh/glincker/thesvg@main/public/icons/google-antigravity/default.svg"
+                                alt="Google Antigravity logo"
+                                onerror="this.src='https://cdn.simpleicons.org/google/4285F4'">
+                        </div>
+                        <span>Google Antigravity</span>
                     </div>
                 </div>
             </div>
@@ -971,32 +1186,28 @@
                         continued learning.</p>
                 </div>
 
-                <div class="card award-card" style="margin-bottom:20px">
-                    <div class="award-image">
-                        <img src="avengers_squad_award.png" alt="Avenger's Squad Award">
-                    </div>
-                    <div>
+                <div class="grid three">
+                    <div class="card award-card-item">
+                        <div class="award-thumb-wrap">
+                            <img src="avengers_squad_award.png" alt="Avenger's Squad Award" class="cert-award-img">
+                        </div>
                         <div class="award-badge">Samta.ai Recognition</div>
-                        <h4 style="font-size:1.6rem;margin-bottom:10px">Avenger's Squad Award</h4>
-                        <p>
-                            Awarded by Samta.ai for outstanding performance on the Shared Assessment project
-                            and for contributions that were instrumental to the project's success.
-                        </p>
+                        <h4 style="margin-top:6px">Avenger's Squad Award</h4>
+                        <p>Awarded by Samta.ai for outstanding performance on the Shared Assessment project.</p>
                     </div>
-                </div>
 
-                <div class="grid two">
                     <div class="card">
                         <div class="achievement-icon">🏅</div>
-                        <h4>Certification of Excellence in Data Structures in C++</h4>
-                        <p>Certification listed in the resume, completed during 2023.</p>
+                        <div class="award-badge" style="visibility:hidden">Certification</div>
+                        <h4 style="margin-top:6px">Data Structures in C++</h4>
+                        <p>Certification of Excellence in Data Structures in C++, completed during 2023.</p>
                     </div>
 
                     <div class="card">
                         <div class="achievement-icon">⌨</div>
-                        <h4>350+ LeetCode Problems Solved</h4>
-                        <p>Kept as a coding-practice achievement because it demonstrates consistent DSA and
-                            problem-solving effort.</p>
+                        <div class="award-badge" style="visibility:hidden">Coding</div>
+                        <h4 style="margin-top:6px">350+ LeetCode Solved</h4>
+                        <p>Demonstrates consistent problem-solving and Data Structures & Algorithms practice.</p>
                     </div>
                 </div>
             </div>
